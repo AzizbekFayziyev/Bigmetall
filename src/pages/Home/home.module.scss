@@ -1,0 +1,234 @@
+.home {
+
+     // Header section
+     .header {
+          @apply mt-16 flex items-center justify-between container mx-auto px-4;
+
+          .headerText {
+               @apply max-w-[580px];
+
+               h1 {
+                    @apply font-semibold text-5xl;
+               }
+
+               h5 {
+                    @apply text-gray-500 text-xl my-10;
+               }
+
+               button {
+                    @apply border border-secondary p-2 px-14 font-medium text-secondary;
+                    transition: .3s ease;
+
+                    i {
+                         @apply ml-2;
+                    }
+
+                    &:hover {
+                         @apply bg-secondary text-white scale-105;
+                    }
+               }
+          }
+
+          .headerImg {
+               @apply w-[500px] ml-4;
+          }
+     }
+
+     // Products table section
+     .products {
+          @apply mt-16 bg-light;
+     }
+
+     // Category section
+     .category {
+          @apply mt-8;
+
+          button {
+               @apply p-3 px-8 font-medium text-white bg-dark mx-auto block my-4;
+               transition: .3s ease;
+
+               i {
+                    @apply ml-2;
+               }
+
+               &:hover {
+                    @apply scale-105;
+               }
+          }
+     }
+
+     // Delivery info section
+     .delivery {
+          background: url(../../../public/deliveryBg.png) no-repeat;
+          background-size: cover;
+          @apply h-[400px] flex items-center relative;
+
+          h2 {
+               @apply max-w-[1000px] mx-auto text-5xl text-center text-white font-serif font-semibold leading-tight;
+          }
+
+          .coin {
+               transform: translate(-50%);
+               background: linear-gradient(90deg, #FEC601 0%, #FFF4CD 30.93%, #FEC601 100%);
+               background-size: 200% 100%;
+               animation: gradientAnimation 2s infinite;
+               @apply rounded-full w-60 h-60 flex items-center justify-center text-center absolute bottom-[-30%] left-[50%];
+
+               div {
+                    @apply border-2 border-white rounded-full w-52 h-52 flex justify-center flex-col;
+
+                    span {
+                         @apply font-serif text-6xl text-primary font-medium;
+                    }
+
+                    p {
+                         @apply font-serif text-lg font-medium mt-2 text-primary;
+                    }
+               }
+          }
+
+          &::before {
+               content: "";
+               transform: translate(-50%);
+               @apply absolute left-[50%] bottom-[-45%] z-[-1] w-[350px] h-[350px] border-4 border-yellow-400 rounded-full;
+          }
+     }
+
+     // Contact form section
+     .contactForm {
+          @apply mt-64;
+
+          .content {
+               @apply flex items-center justify-around bg-dark p-8 rounded-lg;
+
+               .info {
+                    .infoText {
+                         @apply flex items-center max-w-[300px] mt-4;
+
+                         .infoTextIcon {
+                              @apply text-white/50 text-3xl mr-6;
+                         }
+
+                         h6 {
+                              @apply font-semibold text-lg mb-4 text-white;
+                         }
+
+                         p {
+                              @apply text-white/70 font-semibold leading-relaxed;
+                         }
+
+                         span {
+                              @apply text-white/70 leading-[38px];
+                         }
+                    }
+               }
+
+               .form {
+                    @apply border p-4 px-6 border-white/10 relative;
+
+                    &::before {
+                         content: "";
+                         transform: translate(-50%, -50%);
+                         @apply absolute h-[105%] bg-dark w-[65%] left-[50%] top-[50%];
+                    }
+
+                    .formInput {
+                         @apply m-2;
+
+                         label {
+                              @apply block font-medium text-white/50 mb-1 relative;
+                         }
+
+                         input,
+                         textarea {
+                              @apply outline-none rounded-[4px] p-2 w-full relative;
+                         }
+                    }
+               }
+
+               button {
+                    transition: .3s linear;
+                    @apply bg-primaryDark border-2 border-transparent p-2 px-4 font-semibold text-white rounded-md text-sm my-4 relative;
+
+                    i {
+                         @apply ml-2 text-base;
+                    }
+
+                    &:hover {
+                         @apply bg-transparent scale-105 border-primaryDark;
+                    }
+               }
+          }
+     }
+}
+
+// Coin gradient animation
+@keyframes gradientAnimation {
+
+     0%,
+     100% {
+          background-position: 100% 50%;
+     }
+
+     50% {
+          background-position: 0% 5%;
+     }
+}
+
+// Responsive
+
+@media(max-width: 1024px) {
+     .header {
+          .headerImg {
+               width: 300px !important;
+          }
+     }
+}
+
+@media(max-width: 620px) {
+     .home {
+          .header {
+               @apply text-center py-10 mt-0;
+               background: url(../../../public/headerBg.png) no-repeat;
+               background-size: cover;
+
+               .headerText {
+                    @apply m-0 p-0;
+
+                    h1 {
+                         @apply text-white text-3xl;
+                    }
+
+                    h5 {
+                         @apply my-4;
+                    }
+               }
+
+               .headerImg {
+                    @apply hidden;
+               }
+          }
+
+          .products {
+               @apply mt-0;
+          }
+
+          .delivery {
+               .coin {
+                    @apply w-52 h-52;
+
+                    div{
+                         @apply w-48 h-48;
+                    }
+               }
+
+               &::before{
+                    @apply w-[250px] h-[250px] bottom-[-40%];
+               }
+          }
+
+          .contactForm{
+               @apply hidden;
+          }
+     }
+}

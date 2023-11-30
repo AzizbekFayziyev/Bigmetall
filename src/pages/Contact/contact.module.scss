@@ -1,0 +1,78 @@
+// Contact form
+.contact {
+     @apply flex items-center justify-around flex-wrap mt-8 py-12 border-y border-y-[#f2f2f2];
+
+     .form {
+          @apply max-w-lg;
+
+          h3 {
+               @apply font-medium text-3xl;
+          }
+
+          p {
+               @apply font-medium my-4;
+          }
+
+          input {
+               @apply outline-none border-b border-b-[#D9D9D9] block w-full my-10 p-1;
+          }
+
+          button {
+               @apply w-full bg-primaryDark p-2 rounded text-white font-medium transition-transform;
+
+               i {
+                    @apply ml-2;
+               }
+
+               &:hover {
+                    @apply scale-105;
+               }
+          }
+     }
+
+     .info {
+          @apply bg-dark h-[384px] p-8 px-12 relative mt-12;
+
+          &::before {
+               content: "";
+               @apply absolute w-16 h-16 top-[-8%] left-[-8%] bg-light;
+          }
+
+          h4 {
+               @apply font-semibold text-2xl text-white;
+          }
+
+          h6 {
+               @apply font-semibold text-lg text-white my-6;
+
+               i {
+                    @apply mr-2;
+               }
+          }
+     }
+}
+
+// Dialog
+
+.dialog {
+
+     @apply fixed w-screen h-screen bg-black/50 left-0 top-0 z-10;
+
+     .content {
+          transform: translate(-50%, -50%);
+          @apply fixed left-[50%] top-[50%] bg-white text-center p-16 min-w-[280px];
+
+          i {
+               @apply text-green-500 text-7xl mb-8;
+          }
+
+          h3 {
+               @apply text-2xl my-2;
+          }
+
+          p {
+               @apply font-medium text-black/50;
+          }
+     }
+
+}

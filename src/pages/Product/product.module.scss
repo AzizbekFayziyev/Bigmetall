@@ -1,0 +1,22 @@
+.product {
+     @apply mt-8;
+
+     .header {
+          @apply mb-8 flex items-center justify-between;
+
+          h5 {
+               @apply font-semibold;
+          }
+
+          select {
+               @apply outline-none border p-2 rounded-md;
+          }
+
+          .selectPrimary {
+               @apply bg-primaryDark text-white;
+
+
+               ;
+          }
+     }
+}

@@ -1,0 +1,44 @@
+.calculator {
+     .form {
+          @apply mt-16;
+
+          select,
+          input {
+
+               @apply outline-none border border-black/50 p-2 rounded-md w-[220px];
+
+          }
+
+          .selects {
+               @apply pb-8 border-b border-b-black/30;
+
+               select {
+                    @apply mr-6 mt-4;
+               }
+          }
+
+          .outputs {
+               @apply mt-8 flex items-center justify-between flex-wrap;
+
+               div {
+                    @apply mt-2;
+
+                    label {
+                         @apply block text-sm mb-2 ml-1;
+                    }
+               }
+          }
+     }
+}
+
+// Responsive
+
+@media(max-width: 460px) {
+     .calculator .form {
+
+          select,
+          input {
+               @apply w-[93vw];
+          }
+     }
+}

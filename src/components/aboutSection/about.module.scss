@@ -1,0 +1,23 @@
+// About section styles
+.aboutSection {
+     @apply my-20;
+
+     .aboutCard {
+          @apply flex items-center justify-between;
+
+          .text {
+               @apply max-w-[780px] mr-4;
+          }
+     }
+}
+
+// Responsive
+@media(max-width: 1024px) {
+     .aboutSection .aboutCard {
+          @apply flex-wrap justify-center;
+
+          .text{
+               @apply mb-4 mr-0;
+          }
+     }
+}

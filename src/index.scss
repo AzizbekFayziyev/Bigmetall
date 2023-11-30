@@ -1,0 +1,39 @@
+// Global Styles
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Franklin:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.cnt {
+  @apply container mx-auto px-4;
+}
+
+a.active {
+  &::before {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 840px) {
+  html{
+    font-size: 12px;
+  }
+}

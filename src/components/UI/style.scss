@@ -1,0 +1,18 @@
+// Responsive
+@media(max-width: 780px) {
+     .cards {
+          @apply justify-center;
+     }
+}
+
+@media(max-width: 520px) {
+     .cards {
+          div {
+               @apply max-w-[168px] mx-1 border-l-0;
+          }
+     }
+
+     .noMobile {
+          @apply hidden;
+     }
+}

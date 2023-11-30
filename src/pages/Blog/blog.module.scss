@@ -1,0 +1,36 @@
+// Blog page styles
+.cards {
+     @apply flex items-center justify-around mt-8 flex-wrap;
+
+     .card {
+          @apply p-3 rounded-3xl shadow-2xl max-w-[364px] mt-2;
+
+          span {
+               @apply text-black/80 text-sm my-2 block;
+
+               i {
+                    @apply mr-2;
+               }
+          }
+
+          h3 {
+               @apply font-semibold;
+          }
+
+          h5 {
+               @apply text-sm my-2;
+          }
+
+          button {
+               @apply w-full bg-dark text-white p-1 rounded font-medium transition-colors border border-dark;
+
+               i {
+                    @apply mr-2 text-sm;
+               }
+
+               &:hover{
+                    @apply text-black bg-transparent;
+               }
+          }
+     }
+}

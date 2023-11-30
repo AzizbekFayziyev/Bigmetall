@@ -1,0 +1,99 @@
+// navbar styles
+.navbar {
+     @apply bg-primary p-4;
+
+     .navContainer {
+          @apply container mx-auto flex items-center justify-between px-4;
+     }
+
+     .links {
+          @apply flex;
+
+          li {
+               @apply mr-8;
+
+               a {
+                    @apply text-white font-semibold relative whitespace-nowrap;
+
+                    &::before {
+                         content: "";
+                         transition: .3s ease;
+                         @apply absolute bottom-[-2px] left-0 w-0 h-[2px] bg-secondary;
+                    }
+
+                    &:hover {
+                         &::before {
+                              @apply w-full;
+                         }
+                    }
+               }
+          }
+
+          img {
+               @apply mr-8 my-2 hidden;
+          }
+
+          .mobile {
+               @apply hidden;
+          }
+     }
+
+     .leftSide {
+          @apply flex items-center;
+
+          .logo {
+               @apply mr-16 w-10;
+          }
+     }
+
+     .rightSide {
+          @apply flex items-center;
+
+          a {
+               @apply text-white font-semibold mr-5 whitespace-nowrap;
+          }
+
+          i {
+               @apply text-white text-xl;
+          }
+     }
+
+     .menu {
+          @apply cursor-pointer hidden;
+
+          i {
+               @apply text-white text-3xl;
+          }
+     }
+}
+
+// Responsive
+
+@media(max-width: 770px) {
+
+     .navbar .rightSide {
+          @apply hidden;
+     }
+
+     .navbar {
+          .menu {
+               @apply inline-block;
+          }
+
+          .links {
+
+               img,
+               .mobile {
+                    @apply inline-block;
+               }
+          }
+     }
+
+     .links {
+          @apply absolute top-[50px] left-0 bg-primary z-10 flex flex-col justify-center items-center w-full invisible pointer-events-none translate-y-[-100%] transition-transform;
+
+          li {
+               @apply my-2;
+          }
+     }
+}
